@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Diagnostics;
+using System.IO;
 
 public class SaveInputs : MonoBehaviour
 {
@@ -28,10 +29,9 @@ public class SaveInputs : MonoBehaviour
 
         TimerClass.Timers.Add(new TimerClass(timeName, timeNumber));
         saveJson.WriteTimersToJson();
-        CreateTimer();
+        //CreateTimer();
     }
-
-    private void CreateTimer()
+        private void CreateTimer()
     {
         Instantiate(timer, transform.parent);
         timer.GetComponentInChildren<Text>().text = TimerClass.Timers[0].TimerCount.ToString();
