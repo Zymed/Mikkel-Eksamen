@@ -19,6 +19,6 @@ public class SaveToJson
 
     public void ReadTimersFromJson()
     {
-        var inputString = File.ReadAllText(_fileName);
+        var inputString = File.ReadAllText(Application.dataPath + _fileName);
     }
 }
