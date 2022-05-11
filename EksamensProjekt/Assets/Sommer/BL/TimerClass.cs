@@ -3,48 +3,37 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-[Serializable]
-public class TimerClass
+namespace Assets.Sommer.BL
 {
-    private readonly int _maxTimer = 60;
-    private readonly int _minTimer = 1;
-    public string TimerName { get; set; }
-    public int TimerCount { get; private set; }
-
-    private static List<TimerClass> _timers;
-    public static List<TimerClass> Timers
+    [Serializable]
+    public class TimerClass
     {
-        get
+        private readonly int _maxTimer = 60;
+        private readonly int _minTimer = 1;
+        public string TimerName;
+        public int TimerCount;
+
+        public TimerClass(string timerName, int timerCount)
         {
-            if( _timers == null )
-                _timers = new List<TimerClass>();
+            TimerName = timerName;
 
-            return _timers;
+            SetTimer(timerCount);
         }
+
+        /*public TimerClass(string timerName)
+        {
+            TimerName = timerName;
+            TimerCount = 0;
+        }*/
+
+        public void SetTimer(int newTimerCount)
+        {
+            if (newTimerCount > _maxTimer)
+                throw new ArgumentException("TimerCount must be less than " + _maxTimer);
+            if (newTimerCount < _minTimer)
+                throw new ArgumentException("TimerCount must be more than " + _minTimer);
+            TimerCount = newTimerCount;
+        }
+
     }
-
-    public TimerClass(string timerName, int timerCount)
-    {
-        TimerName = timerName;
-
-        SetTimer(timerCount);
-    }
-
-    /*public TimerClass(string timerName)
-    {
-        TimerName = timerName;
-        TimerCount = 0;
-    }*/
-
-    public void SetTimer(int newTimerCount)        
-    {
-        if (newTimerCount > _maxTimer)
-            throw new ArgumentException("TimerCount must be less than " + _maxTimer);
-        if (newTimerCount < _minTimer)
-            throw new ArgumentException("TimerCount must be more than " + _minTimer);
-        TimerCount = newTimerCount;
-    }
-
 }
-
-

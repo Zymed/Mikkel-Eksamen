@@ -1,24 +1,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using System;
+using System.Text;
 
-
-public class SaveToJson
+namespace Assets.Sommer.BL
 {
-    private readonly string _fileName = "/timers.json";
-    //[SerializeField] private TimerClass jsonData = new TimerClass();
-    public void WriteTimersToJson()
+    public class SaveToJson
     {
-        string outputJson = JsonUtility.ToJson(TimerClass.Timers);
-        File.WriteAllText(Application.dataPath + _fileName, outputJson);
-        Debug.Log("File has been saved as json file at: " + Application.dataPath);
-        Debug.Log("File has been saved with "+TimerClass.Timers.Count+" amount of numbers in the list.");
-        Debug.Log("The content of the list is: " + outputJson);
-    }
+        private static readonly string _fileName = "/timers.json";
+        public static string FilePath { get; private set; } = Application.dataPath + _fileName;
 
-    public void ReadTimersFromJson()
-    {
-        var inputString = File.ReadAllText(Application.dataPath + _fileName);
+        public static void WriteTimersToJson()
+        {            
+            string outputJson = JsonUtility.ToJson(TimerClasses.Instance);
+
+            File.WriteAllText(FilePath, outputJson);
+            Debug.Log("File has been saved as json file at: " + Application.dataPath);
+            Debug.Log("File has been saved with " + TimerClasses.Instance.Timers.Count + " amount of numbers in the list.");
+            Debug.Log("The content of the list is: " + outputJson);
+        }
+
+        public static void ReadTimersFromJson()
+        {
+            var inputString = File.ReadAllText(FilePath);
+        }
     }
 }

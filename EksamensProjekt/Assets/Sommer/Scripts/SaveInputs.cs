@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Diagnostics;
+using Assets.Sommer.BL;
 using System.IO;
 
 public class SaveInputs : MonoBehaviour
@@ -27,15 +28,15 @@ public class SaveInputs : MonoBehaviour
         var timeName = nameInput.text;
         var timeNumber = int.Parse(countInput.text);
 
-        TimerClass.Timers.Add(new TimerClass(timeName, timeNumber));
-        saveJson.WriteTimersToJson();
+        TimerClasses.Instance.Timers.Add(new TimerClass(timeName, timeNumber));
+        SaveToJson.WriteTimersToJson();
         //CreateTimer();
     }
         private void CreateTimer()
     {
         Instantiate(timer, transform.parent);
-        timer.GetComponentInChildren<Text>().text = TimerClass.Timers[0].TimerCount.ToString();
-        UnityEngine.Debug.Log("Timer name is: " + TimerClass.Timers[0].TimerName);
-        UnityEngine.Debug.Log("Timer has been set to: "+TimerClass.Timers[0].TimerCount.ToString()+" seconds");
+        timer.GetComponentInChildren<Text>().text = TimerClasses.Instance.Timers[0].TimerCount.ToString();
+        UnityEngine.Debug.Log("Timer name is: " + TimerClasses.Instance.Timers[0].TimerName);
+        UnityEngine.Debug.Log("Timer has been set to: "+ TimerClasses.Instance.Timers[0].TimerCount.ToString()+" seconds");
     }
 }
