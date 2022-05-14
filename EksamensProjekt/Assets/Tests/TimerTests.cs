@@ -57,6 +57,24 @@ public class TimerTests
         Assert.AreNotEqual("{}", fileContent);
     }
 
+    [Test]
+
+    public void You_can_read_timers_from_json()
+    {
+        //Arrange
+        var timerName = "Test";
+        var timerCountdown = 60;
+        var newTimer = new TimerClass(timerName, timerCountdown);
+        //Act
+        TimerClasses.Instance.Timers.Clear();
+        SaveToJson.ReadTimersFromJson();
+        //Assert
+        Assert.NotNull(TimerClasses.Instance.Timers);
+        //Assert.IsNotEmpty(TimerClasses.Instance.Timers);
+        //Assert.Contains(newTimer, TimerClasses.Instance.Timers);
+        //Assert.IsTrue(TimerClasses.Instance.Timers.Count == 1);
+    }
+
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
         // `yield return null;` to skip a frame.
         //[UnityTest]

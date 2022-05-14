@@ -5,8 +5,12 @@ using System.Text;
 
 namespace Assets.Sommer.BL
 {
+    
     public class SaveToJson
     {
+
+        public TextAsset textJson;
+
         private static readonly string _fileName = "/timers.json";
         public static string FilePath { get; private set; } = Application.dataPath + _fileName;
 
@@ -22,7 +26,9 @@ namespace Assets.Sommer.BL
 
         public static void ReadTimersFromJson()
         {
-            var inputString = File.ReadAllText(FilePath);
+            string inputJson =  File.ReadAllText(FilePath);
+            TimerClasses myTimers = JsonUtility.FromJson<TimerClasses>(inputJson);
+            
         }
     }
 }
