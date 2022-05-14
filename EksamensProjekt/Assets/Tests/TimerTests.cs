@@ -50,8 +50,8 @@ public class TimerTests
 
         SaveToJson.WriteTimersToJson();
 
-        var fileInfo = new FileInfo(SaveToJson.FilePath);
-        var fileContent = File.ReadAllText(SaveToJson.FilePath);
+        var fileInfo = new FileInfo(SaveToJson.filePath);
+        var fileContent = File.ReadAllText(SaveToJson.filePath);
         Assert.True(fileInfo.Exists);
         Assert.True(fileInfo.Length > 0);
         Assert.AreNotEqual("{}", fileContent);
@@ -70,9 +70,8 @@ public class TimerTests
         SaveToJson.ReadTimersFromJson();
         //Assert
         Assert.NotNull(TimerClasses.Instance.Timers);
-        //Assert.IsNotEmpty(TimerClasses.Instance.Timers);
-        //Assert.Contains(newTimer, TimerClasses.Instance.Timers);
-        //Assert.IsTrue(TimerClasses.Instance.Timers.Count == 1);
+        Assert.AreEqual(timerName, newTimer.TimerName);
+        Assert.AreEqual(timerCountdown, newTimer.TimerCount);
     }
 
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use

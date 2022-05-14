@@ -13,6 +13,7 @@ public class SaveInputs : MonoBehaviour
     [SerializeField] private TMP_InputField countInput;
     [SerializeField] private Button button;
     [SerializeField] private Button timer;
+    [SerializeField] private Button instanitate;
 
     public Stopwatch timerWatch;
 
@@ -21,6 +22,7 @@ public class SaveInputs : MonoBehaviour
     public void Start()
     {
         button.onClick.AddListener(SaveInput);
+        instanitate.onClick.AddListener(CreateTimer);
     }
 
     public void SaveInput()
@@ -30,7 +32,6 @@ public class SaveInputs : MonoBehaviour
 
         TimerClasses.Instance.Timers.Add(new TimerClass(timeName, timeNumber));
         SaveToJson.WriteTimersToJson();
-        //CreateTimer();
     }
         private void CreateTimer()
     {
