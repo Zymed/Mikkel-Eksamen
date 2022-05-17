@@ -21,10 +21,8 @@ public class SavingJson : MonoBehaviour
     public static void ReadJsonFile()
     {
         string timer = File.ReadAllText(Application.dataPath + "/timer.json");
-        JsonUtility.FromJson<TimerList>(timer);
-        Debug.Log(TimerList.Instance.Timers.Count);
-        Debug.Log(TimerList.Instance.Timers[0].timer_name);
-        Debug.Log(TimerList.Instance.Timers[0].timer_count);
+        TimerList list = JsonUtility.FromJson<TimerList>(timer);
+        Debug.Log(list.Timers[0].timer_name);
     }
 }
 

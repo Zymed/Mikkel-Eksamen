@@ -19,7 +19,7 @@ public class SavingUnityInputs : MonoBehaviour
 
     public void SaveStuffToList()
     {
-        TimerList.Instance.Timers.Clear();
+        //TimerList.Instance.Timers.Clear();
         var timerName = timeName.text;
         int timerCountdown = int.Parse(timeCount.text);
         var newTimer = new TimerData(timerName, timerCountdown);
