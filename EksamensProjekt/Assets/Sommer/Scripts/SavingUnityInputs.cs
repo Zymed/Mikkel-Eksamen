@@ -30,5 +30,6 @@ public class SavingUnityInputs : MonoBehaviour
     public void ReadStuffFromList()
     {
         SavingJson.ReadJsonFile();
+        SceneChangeManager.LoadTimerScene();
     }
 }

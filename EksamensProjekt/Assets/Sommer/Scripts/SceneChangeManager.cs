@@ -10,4 +10,9 @@ public static class SceneChangeManager
     {
         SceneManager.LoadScene(currentScene++);
     }
+
+    public static void LoadTimerScene()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
