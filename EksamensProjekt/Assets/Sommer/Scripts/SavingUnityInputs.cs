@@ -8,8 +8,8 @@ public class SavingUnityInputs : MonoBehaviour
 {
     [SerializeField] private Button save;
     [SerializeField] private Button load;
-    [SerializeField] private TMP_InputField timeName;
-    [SerializeField] private TMP_InputField timeCount;
+    [SerializeField] private TMP_InputField _roomName;
+    //[SerializeField] private TMP_InputField _roomCount;
 
     public void Start()
     {
@@ -20,17 +20,16 @@ public class SavingUnityInputs : MonoBehaviour
     public void SaveStuffToList()
     {
         //TimerList.Instance.Timers.Clear();
-        var timerName = timeName.text;
-        int timerCountdown = int.Parse(timeCount.text);
-        var newTimer = new TimerData(timerName, timerCountdown);
-        TimerList.Instance.Timers.Add(newTimer);
+        var roomName = _roomName.text;
+        var newRoom = new RoomData(roomName);
+        RoomList.Instance.Rooms.Add(newRoom);
         SavingJson.SaveJsonFile();
     }
 
     public void ReadStuffFromList()
     {
         SavingJson.ReadJsonFile();
-        Debug.Log(TimerList.Instance.Timers.Count);
+        Debug.Log(RoomList.Instance.Rooms.Count);
     }
 
     private void Update()

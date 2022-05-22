@@ -1709,13 +1709,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1918957060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5300731b02a7b545b7df27e47903672, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f307c4c27a7c3e48a6d7b0f22a3be3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   save: {fileID: 1258680443}
   load: {fileID: 2061478080}
-  timeName: {fileID: 239946605}
-  timeCount: {fileID: 1388996535}
+  _roomName: {fileID: 239946605}
+  _roomID: {fileID: 1388996535}
 --- !u!4 &1918957062
 Transform:
   m_ObjectHideFlags: 0

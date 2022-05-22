@@ -12,7 +12,7 @@ public class SavingJson : MonoBehaviour
     
     public static void SaveJsonFile()
     {
-        string timer = JsonUtility.ToJson(TimerList.Instance);
+        string timer = JsonUtility.ToJson(RoomList.Instance);
         File.WriteAllText(filePath, timer);
         Debug.Log("File has been saved in "+Application.dataPath);
     }
@@ -20,7 +20,7 @@ public class SavingJson : MonoBehaviour
     public static void ReadJsonFile()
     {
         string timer = File.ReadAllText(filePath);
-        TimerList list = JsonUtility.FromJson<TimerList>(timer);
+        RoomList list = JsonUtility.FromJson<RoomList>(timer);
 
         Debug.Log("ReadJsonFile executed ");
 

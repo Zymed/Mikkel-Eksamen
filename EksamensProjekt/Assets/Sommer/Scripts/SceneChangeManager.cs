@@ -11,7 +11,7 @@ public static class SceneChangeManager
         SceneManager.LoadScene(currentScene++);
     }
 
-    public static void LoadTimerScene()
+    public static void LoadRoomScene()
     {
         SceneManager.LoadScene(0);
     }
