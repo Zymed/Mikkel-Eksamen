@@ -12,10 +12,9 @@ public class DisplayTimers : MonoBehaviour
     [SerializeField] private TMP_Text _roomName;
     public void Awake()
     {
-        RoomList.Instance.Rooms.Add(new RoomData("Gizmo"));
-        RoomList.Instance.Rooms.Add(new RoomData("Frokost"));
-        RoomList.Instance.Rooms.Add(new RoomData("Gozby"));
-        //SavingJson.ReadJsonFile();
+        RoomList.Instance.Rooms.Add(new RoomData("Yoko"));
+        RoomList.Instance.Rooms.Add(new RoomData("Jakamoko"));
+        RoomList.Instance.Rooms.Add(new RoomData("Toto"));
     }
     // Start is called before the first frame update
     void Start()
@@ -23,10 +22,8 @@ public class DisplayTimers : MonoBehaviour
         Debug.Log(RoomList.Instance.Rooms.Count);
         foreach (var room in RoomList.Instance.Rooms)
         {
-            //var room = RoomList.Instance.Rooms.Count;
-            _roomName.text = "Gizmo";
-            Instantiate(timerPrefab, transform);
-            Debug.Log("Instantiation executed ");
+            GameObject roomPrefab = Instantiate(timerPrefab, transform);
+            roomPrefab.GetComponentInChildren<TextMeshProUGUI>().text = room.room_name;
         }
     }
 
