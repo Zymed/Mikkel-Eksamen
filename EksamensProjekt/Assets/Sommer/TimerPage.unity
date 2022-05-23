@@ -393,7 +393,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerPrefab: {fileID: 4443043428087851168, guid: 4c8c32a7e53c6cf43b66cd655961728f, type: 3}
-  _roomName: {fileID: 8255502401158400931, guid: a169e4b606b64ab4abda9c3fb0c95c82, type: 3}
 --- !u!114 &271973352
 MonoBehaviour:
   m_ObjectHideFlags: 0

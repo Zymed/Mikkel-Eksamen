@@ -5,10 +5,11 @@ using System.Collections.Generic;
 public class RoomData
 {
     public string room_name;
-    //public int room_ID;
+    public int room_ID;
 
-    public RoomData(string roomName)
+    public RoomData(string roomName, int roomID)
     {
         room_name = roomName;
+        room_ID = roomID;
     }
 }

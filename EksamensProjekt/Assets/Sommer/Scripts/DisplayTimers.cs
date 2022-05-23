@@ -9,12 +9,12 @@ using TMPro;
 public class DisplayTimers : MonoBehaviour
 {
     [SerializeField] private GameObject timerPrefab;
-    [SerializeField] private TMP_Text _roomName;
+
     public void Awake()
     {
-        RoomList.Instance.Rooms.Add(new RoomData("Yoko"));
-        RoomList.Instance.Rooms.Add(new RoomData("Jakamoko"));
-        RoomList.Instance.Rooms.Add(new RoomData("Toto"));
+        RoomList.Instance.Rooms.Add(new RoomData("Yoko",1));
+        RoomList.Instance.Rooms.Add(new RoomData("Jakamoko",2));
+        RoomList.Instance.Rooms.Add(new RoomData("Toto",3));
     }
     // Start is called before the first frame update
     void Start()

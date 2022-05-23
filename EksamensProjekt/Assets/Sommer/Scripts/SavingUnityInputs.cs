@@ -9,7 +9,7 @@ public class SavingUnityInputs : MonoBehaviour
     [SerializeField] private Button save;
     [SerializeField] private Button load;
     [SerializeField] private TMP_InputField _roomName;
-    //[SerializeField] private TMP_InputField _roomCount;
+    [SerializeField] private TMP_InputField _roomCount;
 
     public void Start()
     {
@@ -19,9 +19,9 @@ public class SavingUnityInputs : MonoBehaviour
 
     public void SaveStuffToList()
     {
-        //TimerList.Instance.Timers.Clear();
         var roomName = _roomName.text;
-        var newRoom = new RoomData(roomName);
+        var roomID = int.Parse(_roomCount.text);
+        var newRoom = new RoomData(roomName,roomID);
         RoomList.Instance.Rooms.Add(newRoom);
         SavingJson.SaveJsonFile();
     }

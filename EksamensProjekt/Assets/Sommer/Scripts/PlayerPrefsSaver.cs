@@ -28,10 +28,10 @@ public class PlayerPrefsSaver : MonoBehaviour
     public void SavePlayerPrefs()
     {
         string roomName = _roomName.text;
-        //var roomID = int.Parse(_roomID.text);
+        int roomID = int.Parse(_roomID.text);
         PlayerPrefs.SetString("RoomName", roomName);
-        //PlayerPrefs.SetInt("RoomID", roomID);
-        RoomList.Instance.Rooms.Add(new RoomData(PlayerPrefs.GetString("RoomName")));
+        PlayerPrefs.SetInt("RoomID", roomID);
+        RoomList.Instance.Rooms.Add(new RoomData(PlayerPrefs.GetString("RoomName"),PlayerPrefs.GetInt("RoomID")));
         Debug.Log(RoomList.Instance.Rooms.Count);
 
     }
