@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// This script serves as a constructor for Data a Room MUST have.
+/// </summary>
+
 [System.Serializable]
 public class RoomData
 {

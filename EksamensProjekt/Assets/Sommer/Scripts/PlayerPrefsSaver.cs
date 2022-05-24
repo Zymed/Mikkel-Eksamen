@@ -10,37 +10,28 @@ public class PlayerPrefsSaver : MonoBehaviour
     [SerializeField] private Button save;
     [SerializeField] private Button load;
     [SerializeField] private TMP_InputField _roomName;
-    [SerializeField] private TMP_InputField _roomID;
-
-    //public string timerName;
-    //public int timerCount;
+    
     void Start()
     {
         save.onClick.AddListener(SavePlayerPrefs);
-        load.onClick.AddListener(LoadPlayerPrefs);
+        load.onClick.AddListener(LoadRoomPage);
     }
 
-    void Update()
-    {
-        
-    }
-
+    /// <summary>
+    /// The inputfield is saved to PlayerPrefs String
+    /// A PlayerPrefs Int is also saved as the rooms ID
+    /// Finally it adds new RoomData with the PlayerPrefs String and Int to the RoomList.Instance.Rooms.
+    /// </summary>
     public void SavePlayerPrefs()
     {
         string roomName = _roomName.text;
-        int roomID = int.Parse(_roomID.text);
         PlayerPrefs.SetString("RoomName", roomName);
-        PlayerPrefs.SetInt("RoomID", roomID);
+        PlayerPrefs.SetInt("RoomID", RoomList.Instance.Rooms.Count + 1);
         RoomList.Instance.Rooms.Add(new RoomData(PlayerPrefs.GetString("RoomName"),PlayerPrefs.GetInt("RoomID")));
-        Debug.Log(RoomList.Instance.Rooms.Count);
-
     }
 
-    public void LoadPlayerPrefs()
+    public void LoadRoomPage()
     {
-        //string roomName = PlayerPrefs.GetString("RoomName");
-        //RoomList.Instance.Rooms.Add(new RoomData(roomName));
-        //Debug.Log(RoomList.Instance.Rooms.Count);
         SceneChangeManager.LoadRoomScene();
     }
 }

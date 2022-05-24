@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public static class SceneChangeManager 
 {
     public static int currentScene = SceneManager.GetActiveScene().buildIndex;
-    public static void LoadNextScene()
+    public static void LoadAddRoomScene()
     {
-        SceneManager.LoadScene(currentScene++);
+        SceneManager.LoadScene(1);
     }
 
     public static void LoadRoomScene()
