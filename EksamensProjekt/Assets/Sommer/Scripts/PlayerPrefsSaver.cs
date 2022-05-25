@@ -27,7 +27,7 @@ public class PlayerPrefsSaver : MonoBehaviour
         string roomName = _roomName.text;
         PlayerPrefs.SetString("RoomName", roomName);
         PlayerPrefs.SetInt("RoomID", RoomList.Instance.Rooms.Count + 1);
-        RoomList.Instance.Rooms.Add(new RoomData(PlayerPrefs.GetString("RoomName"),PlayerPrefs.GetInt("RoomID")));
+        RoomList.Instance.Rooms.Add(new RoomData(PlayerPrefs.GetString("RoomName"), PlayerPrefs.GetInt("RoomID")));
     }
 
     public void LoadRoomPage()

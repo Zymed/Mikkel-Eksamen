@@ -4,16 +4,11 @@ using UnityEngine;
 
 /// <summary>
 /// A list is created and uses the singleton pattern from the codejam. The list "houses" RoomData.
+/// It inherits from the CodeJam singletonpattern, as it was created I made my own singleton to it.
 /// </summary>
 
-[System.Serializable]
 public class RoomList : SingletonPattern<RoomList>
 {
-    private RoomList()
-    {
-
-    }
-
     public List<RoomData> Rooms = new List<RoomData>();
 
     /*private static RoomList _roomLists;

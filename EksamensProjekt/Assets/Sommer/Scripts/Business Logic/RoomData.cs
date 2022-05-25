@@ -5,7 +5,6 @@ using System.Collections.Generic;
 /// This script serves as a constructor for Data a Room MUST have.
 /// </summary>
 
-[System.Serializable]
 public class RoomData
 {
     public string room_name;

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3126282760373789747}
   m_Layer: 0
   m_Name: timer
-  m_TagString: Untagged
+  m_TagString: InstantiatedObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothingSpeed: 0.05
+  timerPrefab: {fileID: 0}
 --- !u!61 &601655869034364209
 BoxCollider2D:
   m_ObjectHideFlags: 0
