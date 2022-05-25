@@ -7,7 +7,7 @@ public class DragBehaviour : MonoBehaviour, IDragHandler
 
     [SerializeField] private float smoothingSpeed = .05f;
     [SerializeField] private GameObject timerPrefab;
-    public static bool isDragging;
+    public static bool IS_DRAGGING;
 
     private RectTransform draggingObject;
     private Vector3 velocity = Vector3.zero;
@@ -23,7 +23,7 @@ public class DragBehaviour : MonoBehaviour, IDragHandler
     /// </summary>
     public void OnDrag(PointerEventData eventData)
     {
-        isDragging = eventData.dragging;
+        IS_DRAGGING = eventData.dragging;
         if(RectTransformUtility.ScreenPointToWorldPointInRectangle(draggingObject, eventData.position, eventData.pressEventCamera, out var globalMousePosition))
         {
             draggingObject.position = Vector3.SmoothDamp(draggingObject.position, globalMousePosition, ref velocity, smoothingSpeed);

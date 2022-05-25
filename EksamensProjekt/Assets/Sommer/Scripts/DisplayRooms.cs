@@ -63,7 +63,7 @@ public class DisplayRooms : MonoBehaviour
     /// </summary>
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "InstantiatedObject" && DragBehaviour.isDragging)
+        if (collision.gameObject.tag == "InstantiatedObject" && DragBehaviour.IS_DRAGGING)
         {
             int id = int.Parse(collision.gameObject.name);
             foreach (RoomData data in roomList.Rooms.ToArray())
