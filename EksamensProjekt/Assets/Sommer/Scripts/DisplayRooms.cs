@@ -6,15 +6,9 @@ public class DisplayRooms : MonoBehaviour
 {
     [SerializeField] private GameObject timerPrefab;
     [SerializeField] private Button button;
-
     [SerializeField] private GameObject layoutGroup;
 
     private RoomList roomList;
-
-    private void Awake()
-    {
-        //Destroy(timerPrefab);
-    }
 
     /// <summary>
     /// Adds a listener to change scene to the button.
@@ -89,6 +83,5 @@ public class DisplayRooms : MonoBehaviour
         {
             roomList.Rooms[i].room_ID = i+1;
         }
-        Debug.Log("room update length: "+roomList.Rooms.Count);
     }
 }

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Sommer/Homepage.unity
+    guid: da025b4b2f145e143bd942d5ec7e1b5b
+  - enabled: 1
     path: Assets/Sommer/TimerPage.unity
     guid: f1741cc7497ea0c41b451a253e02239a
   - enabled: 1

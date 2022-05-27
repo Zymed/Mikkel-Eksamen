@@ -6,7 +6,7 @@ public class DragBehaviour : MonoBehaviour, IDragHandler
 {
 
     [SerializeField] private float smoothingSpeed = .05f;
-    [SerializeField] private GameObject timerPrefab;
+    [SerializeField] private GameObject roomPrefab;
     public static bool IS_DRAGGING;
 
     private RectTransform draggingObject;
