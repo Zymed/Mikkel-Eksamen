@@ -1144,6 +1144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel(fixed)
       objectReference: {fileID: 0}
+    - target: {fileID: 7200961610935023486, guid: 8e25bdf2b485e4eb4ac2956c36da16ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e25bdf2b485e4eb4ac2956c36da16ec, type: 3}
 --- !u!224 &757597734 stripped
@@ -1523,6 +1527,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352977965}
   m_CullTransparentMesh: 1
+--- !u!1 &1397899212 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7200961610935023472, guid: 8e25bdf2b485e4eb4ac2956c36da16ec, type: 3}
+  m_PrefabInstance: {fileID: 757597733}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1397899214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397899212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c09af4fb1822b34f99619e3402784ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1397899217}
+--- !u!114 &1397899217 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7200961610935023486, guid: 8e25bdf2b485e4eb4ac2956c36da16ec, type: 3}
+  m_PrefabInstance: {fileID: 757597733}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397899212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1486764867
 GameObject:
   m_ObjectHideFlags: 0
