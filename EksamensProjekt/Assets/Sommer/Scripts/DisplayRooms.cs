@@ -30,7 +30,6 @@ public class DisplayRooms : MonoBehaviour
     /// </summary>
     public void InstantiateRooms()
     {
-        print("Rooms count: " + roomList.Rooms.Count);
         foreach (var room in roomList.Rooms)
         {
             GameObject roomPrefab = Instantiate(timerPrefab, layoutGroup.transform);
